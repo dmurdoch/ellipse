@@ -10,8 +10,9 @@ for two parameters.
 }
 \usage{
 ellipse(x, \dots)
-\method{ellipse}{default}(x, scale = c(1, 1), centre = c(0, 0), level = 0.95, 
-    t = sqrt(qchisq(level, 2)), which = c(1, 2), npoints = 100, \dots)
+\method{ellipse}{default}(x, scale = c(1, 1), centre = c(0, 0), level = 0.95,
+    t = sqrt(qchisq(level, 2)), which = c(1, 2), npoints = 100, center = centre,
+    \dots)
 }
 \arguments{
 \item{x}{
@@ -48,6 +49,11 @@ plotted.  The default is the first 2.
 \item{npoints}{
 The number of points used in the ellipse.  Default is 100.
 }
+
+\item{center}{
+An alternative to \code{centre} to accomodate US spelling.
+}
+
 }
 \value{
 An \code{npoints} x \code{2} matrix is returned with columns named according to the

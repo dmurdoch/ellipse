@@ -4,6 +4,8 @@
 * Added a `NEWS.md` file to track changes to the package.
 * Added `README.Rmd`.
 * Added `pkgdown` site.
+* Added US spelling `center` to `ellipse.default()` (submitted by
+James Curran).
 
 # ellipse 0.4.3 (May 2022)  
 

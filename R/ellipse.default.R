@@ -1,7 +1,12 @@
 "ellipse.default" <-
-  function (x, scale = c(1, 1), centre = c(0, 0), level = 0.95, 
-            t = sqrt(qchisq(level, 2)), which = c(1, 2), npoints = 100, ...) 
+  function (x, scale = c(1, 1), centre = c(0, 0), level = 0.95,
+            t = sqrt(qchisq(level, 2)), which = c(1, 2), npoints = 100,
+            center = centre, ...)
 {
+  if(!missing(centre) && !missing(center)){
+    warning("Specify centre or centre, not both. The value from centre will be used.")
+  }
+
   names <- c("x", "y")
   if (is.matrix(x)) {
     xind <- which[1]
