@@ -3,6 +3,7 @@
 * Put source on Github.
 * Added a `NEWS.md` file to track changes to the package.
 * Added `README.Rmd`.
+* Added `pkgdown` site.
 
 # ellipse 0.4.3 (May 2022)  
 
