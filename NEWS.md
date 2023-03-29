@@ -1,6 +1,8 @@
-# ellipse 0.4.3
+# ellipse 0.4.4
 
+* Put source on Github.
 * Added a `NEWS.md` file to track changes to the package.
+* Added `README.Rmd`.
 
 # ellipse 0.4.3 (May 2022)  
 
