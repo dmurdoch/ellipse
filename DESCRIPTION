@@ -1,7 +1,7 @@
 Package: ellipse
 Version: 0.4.3
 Title: Functions for Drawing Ellipses and Ellipse-Like Confidence Regions
-Author:  Duncan Murdoch and E. D. Chow (porting to R by Jesus M. Frias Celayeta)
+Author: Duncan Murdoch and E. D. Chow (porting to R by Jesus M. Frias Celayeta)
 Maintainer: Duncan Murdoch <murdoch.duncan@gmail.com>
 Description: Contains various routines for drawing
     ellipses and ellipse-like confidence regions, implementing the plots
@@ -12,3 +12,5 @@ Depends: R (>= 2.0.0),graphics,stats
 Suggests: MASS
 LazyLoad: yes
 License: GPL (>= 2)
+URL: https://github.com/dmurdoch/ellipse
+BugReports: https://github.com/dmurdoch/ellipse/issues
