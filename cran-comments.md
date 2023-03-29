@@ -1,7 +1,13 @@
-## R CMD check results
+### A minor update:
 
-0 errors | 0 warnings | 1 note
+- `ellipse` is now on Github, so the `DESCRIPTION` points to the
+URL.
+- I've included an alternate spelling "center" using code from James
+Curran.
+- There were no issues in CRAN checks of the previous version.
 
-* This is a minor update to fix the references, at Kurt Hornik's request.
-* The note received in checks is the common false positive
-on newly added DOI links.  The actual links do work.
+
+### R CMD check results
+
+0 errors | 0 warnings | 0 notes
+

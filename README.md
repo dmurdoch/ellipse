@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/dmurdoch/ellipse/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dmurdoch/ellipse/actions/workflows/R-CMD-check.yaml)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ellipse)](https://CRAN.R-project.org/package=ellipse)
 <!-- badges: end -->
 
 `ellipse` contains ellipse drawing routines designed for pairwise

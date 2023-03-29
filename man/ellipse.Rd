@@ -51,7 +51,7 @@ The number of points used in the ellipse.  Default is 100.
 }
 
 \item{center}{
-An alternative to \code{centre} to accomodate US spelling.
+An alternative to \code{centre} to accommodate US spelling.
 }
 
 }

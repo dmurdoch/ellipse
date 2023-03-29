@@ -4,7 +4,7 @@
 Pairwise profile sketch	for GLM profiles
 }
 \description{
-This routine approximates a pairwise confidence region for a glm
+This routine approximates a pairwise confidence region for a \code{glm}
 model.
 }
 \usage{

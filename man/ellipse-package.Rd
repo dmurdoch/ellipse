@@ -29,8 +29,8 @@ various S objects, including scalar correlations, covariance matrices
 
 }
 \author{
-Duncan Murdoch <murdoch@stats.uwo.ca> and E. D. Chow (porting
-to R by Jesus M. Frias Celayeta <iosu@bureau.ucc.ie>)
+Duncan Murdoch and E. D. Chow (porting
+to R by Jesus M. Frias Celayeta.)
 
 Maintainer: Duncan Murdoch <murdoch.duncan@gmail.com>
 }
