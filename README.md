@@ -4,6 +4,8 @@
 # ellipse
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/dmurdoch/ellipse/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dmurdoch/ellipse/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 `ellipse` contains ellipse drawing routines designed for pairwise
@@ -29,7 +31,21 @@ devtools::install_github("dmurdoch/ellipse")
 
 ## Example
 
-The `plotcorr()` function can a matrix of ellipses:
+Plot approximate pairwise confidence regions and profile trace plots for
+a nonlinear fit:
+
+``` r
+data(Puromycin)
+Purboth <- nls(formula = rate ~ ((Vm + delV * (state == "treated"))
+   * conc)/(K + conc), data = Puromycin,
+   start = list(Vm = 160, delV = 40, K = 0.05))
+Pur.prof <- profile(Purboth)
+ellipse::pairs(Pur.prof)
+```
+
+<img src="man/figures/README-pairs.profile-1.png" width="100%" />
+
+The `plotcorr()` function can plot a matrix of ellipses:
 
 ``` r
 library(ellipse)
@@ -46,4 +62,4 @@ colors <- c("#A50F15","#DE2D26","#FB6A4A","#FCAE91","#FEE5D9","white",
 plotcorr(xc, col=colors[5*xc + 6])
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-plotcorr-1.png" width="100%" />
