@@ -4,7 +4,7 @@
             center = centre, ...)
 {
   if(!missing(centre) && !missing(center)){
-    warning("Specify centre or centre, not both. The value from centre will be used.")
+    warning("Specify centre or center, not both. The value from center will be used.")
   }
 
   names <- c("x", "y")
@@ -24,7 +24,7 @@
   r <- min(max(r,-1),1)  # clamp to -1..1, in case of rounding errors
   d <- acos(r)
   a <- seq(0, 2 * pi, len = npoints)
-  matrix(c(t * scale[1] * cos(a + d/2) + centre[1], t * scale[2] * 
-           cos(a - d/2) + centre[2]), npoints, 2, dimnames = list(NULL, 
+  matrix(c(t * scale[1] * cos(a + d/2) + center[1], t * scale[2] * 
+           cos(a - d/2) + center[2]), npoints, 2, dimnames = list(NULL, 
                                                     names))
 }
