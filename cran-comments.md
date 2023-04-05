@@ -1,11 +1,8 @@
-### A minor update:
+### 0.4.5:  A bug fix update:
 
-- `ellipse` is now on Github, so the `DESCRIPTION` points to the
-URL.
-- I've included an alternate spelling "center" using code from James
-Curran.
-- There were no issues in CRAN checks of the previous version.
-
+Sorry for missing this, but there's a simple error in the 
+new code from the previous submission that needs fixing:  the
+new `center` parameter is completely ignored.
 
 ### R CMD check results
 
