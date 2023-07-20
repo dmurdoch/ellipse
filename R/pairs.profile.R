@@ -1,5 +1,6 @@
 pairs <- function(x, ...) {
-  .Deprecated("pairs_profile or graphics::pairs", "ellipse")
+  if (inherits(x, "profile"))
+    .Deprecated("pairs_profile", msg = "ellipse::pairs is deprecated for profile objects.  Use ellipse::pairs_profile instead.")
   UseMethod("pairs")
 }
 
