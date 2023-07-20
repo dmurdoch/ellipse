@@ -1,5 +1,7 @@
-pairs <- function(x, ...) 
+pairs <- function(x, ...) {
+  .Deprecated("pairs_profile or graphics::pairs", "ellipse")
   UseMethod("pairs")
+}
 
 .pairs_default <- function(x, ...)
   graphics::pairs(x, ...)
@@ -19,11 +21,13 @@ pairs <- function(x, ...)
   graphics::pairs(mf, ...)
 }
 
-"pairs.profile" <-
+pairs_profile <-
   function (x, labels = c(names(x), "Profile tau"), panel = lines, 
             invert = TRUE, plot.tau = TRUE, plot.trace = TRUE, plot.sketch = TRUE, 
             plot.ellipse = FALSE, level = 0.95, ...) 
 {
+  stopifnot(inherits(x, "profile"))
+    
   doaxis <- function(which, dolabel = TRUE) axis(which, labels = dolabel) # outer = TRUE, line = -0.5, labels = dolabel)
   setup <- function(x, y, ...) plot(range(x[!is.na(x)]), 
                                        range(y[!is.na(y)]), type = "n", axes = FALSE, ...)
@@ -130,3 +134,5 @@ pairs <- function(x, ...)
   }
   invisible()
 }
+
+pairs.profile <- pairs_profile

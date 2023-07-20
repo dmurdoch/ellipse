@@ -1,5 +1,5 @@
 Package: ellipse
-Version: 0.4.5
+Version: 0.5
 Title: Functions for Drawing Ellipses and Ellipse-Like Confidence Regions
 Author: Duncan Murdoch and E. D. Chow (porting to R by Jesus M. Frias Celayeta)
 Maintainer: Duncan Murdoch <murdoch.duncan@gmail.com>

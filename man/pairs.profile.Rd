@@ -1,5 +1,8 @@
-\name{pairs.profile}
+\name{pairs_profile}
+\alias{pairs_profile}
 \alias{pairs.profile}
+\alias{ellipse-deprecated}
+\alias{pairs}
 \title{
 Profile pairs
 }
@@ -8,14 +11,17 @@ This function produces pairwise plots of profile traces, profile
 sketches, and ellipse approximations to confidence intervals.
 }
 \usage{
-\method{pairs}{profile}(x, labels = c(names(x), "Profile tau"), panel = lines, invert = TRUE, 
+pairs_profile(x, labels = c(names(x), "Profile tau"), panel = lines, invert = TRUE, 
     plot.tau = TRUE, plot.trace = TRUE, plot.sketch = TRUE, 
 	plot.ellipse = FALSE, level = 0.95, \dots)
+	
+# Deprecated generic function.  Use graphics::pairs instead.
+pairs(x, ...)
 }
 \arguments{
 \item{x}{
 An object of class \code{profile}, generally the result of the \code{profile()}
-function.
+function. 
 }
 \item{labels}{
 The labels to use for each variable.  These default to the variable
@@ -53,35 +59,27 @@ profile object.
 This function implements the plots used in Bates and Watts (1988) for
 nonlinear regression diagnostics.
 
-Unfortunately, the \pkg{MASS} package also defines a
-\code{\link[MASS:plot.profile]{pairs.profile}} method.  The \code{ellipse::\link{pairs}}
-generic is supplied to allow users to choose to use
-the version in this package. 
+Prior to \pkg{ellipse} version 0.5,
+the \code{pairs_profile} function was a \code{profile}
+method for the \code{pairs} generic.  This caused
+various conflicts, because \pkg{graphics} also exports a \code{pairs}
+generic, and package \pkg{MASS} exported a \code{profile}
+method for \code{graphics::pairs}.  As of \R version 4.4.0,
+the \pkg{MASS} method will be in \pkg{stats} instead.
 
-If \code{x} is a profile object, then \code{ellipse::pairs(x)} 
-is guaranteed to call the method from this package.  If you'd rather use
-the \pkg{MASS} method, then two steps are needed:  you need to
-be sure that \pkg{MASS} is loaded, then call \code{graphics::pairs(x)}. 
-(If \pkg{MASS} is not loaded, you'll get the default method from the \pkg{graphics} package, which will
-trigger an error since it doesn't know about profile
-objects.)  
-
-If both \pkg{ellipse} and \pkg{MASS} are loaded, then \code{pairs(x)} 
-is slightly ambiguous:  the method that is called depends
-on the ordering of \pkg{ellipse} and \pkg{graphics} (not \pkg{MASS}!) in the search list.  In almost all cases
-\pkg{ellipse} will precede \pkg{graphics}, so the \pkg{ellipse} method will usually be the default.
-
-
-If \code{x} is any object
-other than a profile object, \code{ellipse::pairs(x)}
-will pass the call on to \code{graphics::pairs(x)},
-and the standard method will be called.
+If \code{x} is a profile object then \code{pairs_profile(x)} 
+will call the function from this package.  If you'd rather use
+the \pkg{MASS}/\pkg{stats} method, then make sure the appropriate
+package is loaded, and call \code{pairs(x)}.  (Prior to
+\pkg{ellipse} 0.5, there were complicated rules to determine what
+\code{pairs(x)} would do; those should still work for now, but
+\code{ellipse::pairs} will disappear in a future release.)
 }
 \references{
 Bates and Watts (1988). Nonlinear Regression Analysis and Its Applications. Wiley. \doi{10.1002/9780470316757}.
 }
 \seealso{
-\code{\link{profile}}, \code{\link{ellipse.profile}}, \code{\link{ellipse.nls}}
+\code{\link{pairs}}, \code{\link{profile}}, \code{\link{ellipse.profile}}, \code{\link{ellipse.nls}}
 }
 \examples{
  # Plot everything for the Puromycin data
@@ -90,11 +88,15 @@ Bates and Watts (1988). Nonlinear Regression Analysis and Its Applications. Wile
    * conc)/(K + conc), data = Puromycin,
    start = list(Vm = 160, delV = 40, K = 0.05))
  Pur.prof <- profile(Purboth)
- ellipse::pairs(Pur.prof, plot.ellipse = TRUE)
+ pairs_profile(Pur.prof, plot.ellipse = TRUE)
  
- # Show the corresponding plot from MASS:
- if (requireNamespace("MASS"))
-   graphics::pairs(Pur.prof)
+ # Show the corresponding plot from MASS/stats:
+ if (getRversion() < "4.4.0") {
+   loadNamespace("MASS")
+ } else
+   loadNamespace("stats")
+   
+ graphics::pairs(Pur.prof)
 }
 \keyword{dplot}
 \keyword{regression}

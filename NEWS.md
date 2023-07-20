@@ -1,3 +1,8 @@
+## Version 0.5
+
+* The `pairs()` generic and `pairs.profile()` method have both
+been deprecated, and replaced with the `pairs_profile()` function.
+
 ## Version 0.4.5 
 
 * `center` was ignored in `ellipse.default()`.
