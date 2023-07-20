@@ -1,4 +1,4 @@
-## Version 0.5
+## Version 0.5.0
 
 * The `pairs()` generic and `pairs.profile()` method have both
 been deprecated, and replaced with the `pairs_profile()` function.
