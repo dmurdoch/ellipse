@@ -34,7 +34,7 @@
     
     <a class="navbar-brand me-2" href="index.html">ellipse</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,7 +83,7 @@
 <p>You can install the development version of ellipse from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"dmurdoch/ellipse"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"dmurdoch/ellipse"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
@@ -95,7 +95,7 @@
 <span>   <span class="op">*</span> <span class="va">conc</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="va">K</span> <span class="op">+</span> <span class="va">conc</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">Puromycin</span>,</span>
 <span>   start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>Vm <span class="op">=</span> <span class="fl">160</span>, delV <span class="op">=</span> <span class="fl">40</span>, K <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">Pur.prof</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/profile.html" class="external-link">profile</a></span><span class="op">(</span><span class="va">Purboth</span><span class="op">)</span></span>
-<span><span class="fu">ellipse</span><span class="fu">::</span><span class="fu"><a href="reference/pairs.html">pairs</a></span><span class="op">(</span><span class="va">Pur.prof</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">ellipse</span><span class="fu">::</span><span class="fu"><a href="reference/pairs.profile.html">pairs</a></span><span class="op">(</span><span class="va">Pur.prof</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-pairs.profile-1.png" width="100%"></p>
 <p>The <code><a href="reference/plotcorr.html">plotcorr()</a></code> function can plot a matrix of ellipses:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
