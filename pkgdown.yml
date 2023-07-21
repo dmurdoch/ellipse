@@ -1,8 +1,8 @@
-pandoc: 3.1.1
+pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-07-21T16:45Z
+last_built: 2023-07-21T16:49Z
 urls:
   reference: https://dmurdoch.github.io/ellipse/reference
   article: https://dmurdoch.github.io/ellipse/articles
